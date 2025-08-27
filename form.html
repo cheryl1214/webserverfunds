@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My first form</title>
+    </head>
+    <body>
+        <h1>Simple form</h1>
+        <p>Tell us about yourself.</p>
+        <form>
+            <p>
+                First name: <input type="text" id="fname" name="fname" pattern=".{,50}" required/>
+                <br>
+                Last name: <input type="text" id="lname" name="lname" pattern=".{,50}" requred/>
+                <br>
+                Age:
+                <select id="birthyear" name="birthyear">
+                    <option value="1">Under 18</option>
+                    <option value="2">18-25</option>
+                    <option value="3">26-35</option>
+                    <option value="4">36-45</option>
+                    <option value="5">46-55</option>
+                    <option value="6">56 or over</option>
+                </select>
+            </p>
+            <p>
+                Which Web language you like best?
+                <br>
+                <input type="radio" id="html" name="fav_lang" value="HTML">
+                <label for="html">HTML</label>
+                <br>
+                <input type="radio" id="css" name="fav_lang" value="CSS">
+                <label for="css">CSS</label>
+                <br>
+                <input type="radio" id="javascript" name="fav_lang" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+            </p>
+            <p>
+                What is your mean of transport?
+                <br>
+                <input type="checkbox" id="trans1" name="trans1" value="Car">
+                <label for="trans1"> By car</label>
+                <br>
+                <input type="checkbox" id="trans2" name="trans2" value="PublicTransit">
+                <label for="trans2"> By public transit</label>
+                <br>
+                <input type="checkbox" id="trans3" name="trans3" value="Bike">
+                <label for="trans3"> By bike</label>
+                <br>
+                <input type="checkbox" id="trans4" name="trans4" value="Walk">
+                <label for="trans4"> By walking</label>
+                <br>
+            </p>
+            <p>
+                What is your favorite quote?
+                <br>
+                <textarea id="quote" name="quote" rows="5" cols="50">For example: "I have no special talent. I am only passionately curious." - Albert Einstein</textarea>
+            </p>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
