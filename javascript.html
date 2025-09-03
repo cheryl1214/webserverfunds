@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Intro to JavaScript</title>
+        <title>Intro to JS</title>
+
+        <style>
+        h1, h2, p{ margin: 0px; margin-left: 8px;}
+        button { 
+            margin: 20px;
+            border-radius: 5px;
+        }
+        button:hover { opacity: 0.6; }
+        img, form { margin-left: 20px; margin-top: 20px;}
+        body {
+            font-family: "Century Gothic";
+            background-image: url("img/PEAK.jpg");
+            background-size: 100% auto;
+            background-repeat: repeat-y;
+        }
+        .box1 {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        </style>
 
         <script>
             // Change paragraph function
@@ -10,7 +32,7 @@
             }
             // Hide <div> element function
             function setVis() {
-                x = document.getElementById("myDIV");
+                var x = document.getElementById("myDIV");
                 if (x.style.display === "none") {
                     x.style.display = "block";
                 }
@@ -28,8 +50,8 @@
             }
             //Onblur event to check if input is empty function
             function checkRequired() {
-                field = document.getElementById("userName");
-                msg = document.getElementById("requiredMsg");
+                var field = document.getElementById("userName");
+                var msg = document.getElementById("requiredMsg");
                 if (field.value.trim() === "") {
                     msg.style.display = "inline";
                 } else {
@@ -39,45 +61,54 @@
         </script>
     </head>
     <body>
-        <h1>Introduction to JavaScript</h1>
-        <p>This lab will mainly introduce JavaScript events.</p>
-        
-        <!--Alert-->
-        <button onclick="window.alert('Hello World!')">Click for alert</button>
-
-        <!--Change Paragraph-->
-        <p id="chgPar">This is the text that will eventually be replaced.</p>
-        <button type="button" onclick="parChanged()">Click to change text</button>
-
-        <!--Visibility setting-->
-        <div style="margin-top: 8px; margin-bottom: 8px;">
-            <div id="myDIV">
-                <img src="img/PEAK.jpg">
-            </div>
-            <button onclick="setVis">Click to hide</button>
-            <br>
+        <br>
+        <div class="box1">
+            <h1>JavaScript Events</h1>
+            <p>This lab will mainly introduce JavaScript events.</p>
         </div>
+        <br>
+        <div class="box1">
+            <!--Alert-->
+            <h2>Alert event</h2>
+            <button onclick="window.alert('Hello World!')">Click for alert</button>
+            <hr>
 
-        <!--Change img src-->
-        <div style="margin-top: 8px; margin-bottom: 8px;">
+            <!--Change Paragraph-->
+            <h2>Change paragraph event</h2>
+            <p id="chgPar" style="margin-top: 8px;">This is the text that will eventually be replaced.</p>
+            <button type="button" onclick="parChanged()">Click to change text</button>
+            <br>
+            <hr>
+
+            <!--Visibility setting-->
+            <h2>Hide/Show event</h2>
+            <div id="myDIV">
+                <img src="img/PEAK_Shore.jpg">
+            </div>
+            <button onclick="setVis()">Click to hide/show</button>
+            <br>
+            <hr>
+
+            <!--Change img src-->
+            <h2>Change image event</h2>
             <img id="myImg" src="img/Peak_Alpine.jpg">
             <br>
-            <button onclick="imgChanged">Click for MESA</button>
+            <button onclick="imgChanged()">Click for MESA</button>
             <br>
-        </div>
+            <hr>
 
-        <!--Change text of button onclick-->
-        <div style="margin-top: 8px; margin-bottom: 8px;">
+            <!--Change text of button onclick-->
+            <h2>Change button text event</h2>
             <button onclick="butChanged(this)">Hello World!</button>
             <br>
-        </div>
+            <hr>
 
-        <!--Onblur event-->
-        <div style="margin-top: 8px; margin-bottom: 8px;">
+            <!--Onblur event-->
+            <h2>Onblur event</h2>
             <form>
-                <label for="userName">Username:</label>
-                <input type="text" id="fname" onblur="checkRequired()" required>
-                <span id="requiredMsg" style="color: red; display: none;">This field is required</span>
+               <label for="userName">Username:</label>
+               <input type="text" id="userName" onblur="checkRequired()" required>
+               <span id="requiredMsg" style="color: pink; font-size: bold; display: none;">This field is required</span>
             </form>
         </div>
     </body>
