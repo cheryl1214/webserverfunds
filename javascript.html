@@ -11,11 +11,13 @@
         }
         button:hover { opacity: 0.6; }
         img, form { margin-left: 20px; margin-top: 20px;}
+        img { width: 700px; height: auto; }
         body {
             font-family: "Century Gothic";
-            background-image: url("img/PEAK.jpg");
+            background-image: url("img/PEAK_KeyArt_No_Logo.webp");
             background-size: 100% auto;
             background-repeat: repeat-y;
+            background-attachment: fixed;
         }
         .box1 {
             background: rgba(0, 0, 0, 0.6);
@@ -32,7 +34,7 @@
             }
             // Hide <div> element function
             function setVis() {
-                var x = document.getElementById("myDIV");
+                x = document.getElementById("myDIV");
                 if (x.style.display === "none") {
                     x.style.display = "block";
                 }
@@ -49,14 +51,14 @@
                 elem.innerHTML = "Goodbye World!";
             }
             //Onblur event to check if input is empty function
-            function checkRequired() {
-                var field = document.getElementById("userName");
-                var msg = document.getElementById("requiredMsg");
-                if (field.value.trim() === "") {
-                    msg.style.display = "inline";
-                } else {
-                    msg.style.display = "none";
+            function onBlur() {
+                field = document.getElementById("userName").value;
+                if (field.trim() === "") {
+                    window.alert("This field is required");
                 }
+            }
+            window.onload = function() {    /* Ensure the event listener is added after the DOM is fully loaded */
+                document.getElementById("userName").addEventListener("blur", onBlur);
             }
         </script>
     </head>
@@ -106,9 +108,7 @@
             <!--Onblur event-->
             <h2>Onblur event</h2>
             <form>
-               <label for="userName">Username:</label>
-               <input type="text" id="userName" onblur="checkRequired()" required>
-               <span id="requiredMsg" style="color: pink; font-size: bold; display: none;">This field is required</span>
+               Username:<input type="text" id="userName">
             </form>
         </div>
     </body>
