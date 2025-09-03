@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Intro to JavaScript</title>
+
+        <script>
+            // Change paragraph function
+            function parChanged() {
+                document.getElementById("chgPar").innerHTML = "The text has been changed.";
+            }
+            // Hide <div> element function
+            function setVis() {
+                x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+                else {
+                    x.style.display = "none";
+                }
+            }
+            //Change img src function
+            function imgChanged() {
+                document.getElementById("myImg").src = "img/PEAK_Mesa.jpg";
+            }
+            //Change text of clicked button function
+            function butChanged(elem) {
+                elem.innerHTML = "Goodbye World!";
+            }
+            //Onblur event to check if input is empty function
+            function checkRequired() {
+                field = document.getElementById("userName");
+                msg = document.getElementById("requiredMsg");
+                if (field.value.trim() === "") {
+                    msg.style.display = "inline";
+                } else {
+                    msg.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Introduction to JavaScript</h1>
+        <p>This lab will mainly introduce JavaScript events.</p>
+        
+        <!--Alert-->
+        <button onclick="window.alert('Hello World!')">Click for alert</button>
+
+        <!--Change Paragraph-->
+        <p id="chgPar">This is the text that will eventually be replaced.</p>
+        <button type="button" onclick="parChanged()">Click to change text</button>
+
+        <!--Visibility setting-->
+        <div style="margin-top: 8px; margin-bottom: 8px;">
+            <div id="myDIV">
+                <img src="img/PEAK.jpg">
+            </div>
+            <button onclick="setVis">Click to hide</button>
+            <br>
+        </div>
+
+        <!--Change img src-->
+        <div style="margin-top: 8px; margin-bottom: 8px;">
+            <img id="myImg" src="img/Peak_Alpine.jpg">
+            <br>
+            <button onclick="imgChanged">Click for MESA</button>
+            <br>
+        </div>
+
+        <!--Change text of button onclick-->
+        <div style="margin-top: 8px; margin-bottom: 8px;">
+            <button onclick="butChanged(this)">Hello World!</button>
+            <br>
+        </div>
+
+        <!--Onblur event-->
+        <div style="margin-top: 8px; margin-bottom: 8px;">
+            <form>
+                <label for="userName">Username:</label>
+                <input type="text" id="fname" onblur="checkRequired()" required>
+                <span id="requiredMsg" style="color: red; display: none;">This field is required</span>
+            </form>
+        </div>
+    </body>
+</html>
