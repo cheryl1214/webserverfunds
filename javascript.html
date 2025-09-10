@@ -60,6 +60,12 @@
             window.onload = function() {    /* Ensure the event listener is added after the DOM is fully loaded */
                 document.getElementById("userName").addEventListener("blur", onBlur);
             }
+            //Fetch API function
+            async function getText(file) {
+                let myPEAK = await fetch(file);
+                let myText = await myPEAK.text();
+                document.getElementById("rule0").innerHTML = myText;
+            }
         </script>
     </head>
     <body>
@@ -110,6 +116,11 @@
             <form>
                Username:<input type="text" id="userName">
             </form>
+
+            <!--Fetch API-->
+            <h2>Fetch API event</h2>
+            <p id="rule0">Rule 0: Never abandon a Friend in Need!</p>
+            <button onclick="getText('PEAK.txt')">Click to fetch text</button>
         </div>
     </body>
 </html>
