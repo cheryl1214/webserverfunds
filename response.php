@@ -5,7 +5,7 @@
     </head>
     <body>
         <p>Your name is: <?= htmlspecialchars($_POST['fname']) . " " . 
-            htmlspecialchars (&_POST['lname']) ?></p>
+            htmlspecialchars ($_POST['lname']) ?></p>
         <p>You are between <?= htmlspecialchars($_POST['birthyear']) ?> 
             years old</p>
         <p>The Web language you like best is: 
@@ -29,6 +29,6 @@
             }
             ?>
         </p>
-        <p>Your favorite quote is: <?= htmlspecialchars(&_POST['quote']) ?></p>
+        <p>Your favorite quote is: <?= htmlspecialchars($_POST['quote']) ?></p>
     </body>
 </html>
