@@ -8,7 +8,7 @@
             padding: 10px; 
             font-family: 'Courier New', Courier, monospace;
             font-size: 1em; ">
-        <p>hello <?php echo htmlspecialchars($_SERVER['HTTPS_USER_AGENT']); ?></p>
+        <p><?php echo htmlspecialchars($_SERVER['HTTP_USER_AGENT']); ?></p>
         </div>
     </body>
 </html>
