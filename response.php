@@ -4,7 +4,6 @@
         <title>Form Response</title>
     </head>
     <body>
-        <p>POST: <?= var_dump($_POST) ?></p>
         <p>Your name is: <?= htmlspecialchars($_POST['fname']) . " " . 
             htmlspecialchars ($_POST['lname']) ?></p>
         <p>
