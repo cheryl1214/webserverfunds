@@ -6,8 +6,14 @@
     <body>
         <p>Your name is: <?= htmlspecialchars($_POST['fname']) . " " . 
             htmlspecialchars ($_POST['lname']) ?></p>
-        <p>You are between <?= htmlspecialchars($_POST['birthyear']) ?> 
-            years old</p>
+        <p>
+            <?php
+            if ($_POST['birthyear'] === "56 or over") {
+                echo "56 or over";
+            } else {
+                echo "You are between " . htmlspecialchars($_POST['birthyear']) . " years old"; 
+            ?> 
+        </p>
         <p>The Web language you like best is: 
             <?= htmlspecialchars($_POST['fav_lang']) ?></p>
         <p>
