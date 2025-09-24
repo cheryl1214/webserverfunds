@@ -8,10 +8,13 @@
             htmlspecialchars ($_POST['lname']) ?></p>
         <p>
             <?php
-            if ($_POST['birthyear'] === "56 or over") {
-                echo "56 or over";
+            if ($_POST['birthyear'] === "56") {
+                echo "Your are 56 years old or over";
+            } elseif ($_POST['birthyear'] === "18") {
+                echo "You are under 18 years old.";
             } else {
                 echo "You are between " . htmlspecialchars($_POST['birthyear']) . " years old"; 
+            }
             ?> 
         </p>
         <p>The Web language you like best is: 
