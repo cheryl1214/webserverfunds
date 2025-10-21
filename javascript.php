@@ -2,14 +2,13 @@
 <html>
     <head>
         <title>Intro to JS</title>
-
         <style>
         h1, h2, p{ margin: 0px; margin-left: 8px;}
-        button { 
+        button, #submit { 
             margin: 20px;
             border-radius: 5px;
         }
-        button:hover { opacity: 0.6; }
+        button:hover, #submit:hover { opacity: 0.6; }
         img, form { margin-left: 20px; margin-top: 20px;}
         img { width: 700px; height: auto; }
         body {
@@ -64,6 +63,38 @@
                 document.getElementById("rule0").innerHTML = myText;
             }
         </script>
+
+        <?php 
+            include "php/sqltest.php";
+
+            if (isset($_POST['submit'])) {
+
+            $food_item = $_POST['food_item'];
+            $weight = $_POST['weight'];
+            $hunger = $_POST['hunger'];
+            $energy = $_POST['energy'];
+            $injury = $_POST['injury'];
+            $poison = $_POST['poison'];
+            $frost = $_POST['frost'];
+            $burnt = $_POST['burnt'];
+            $thorns = $_POST['thorns'];
+            $drowsy = $_POST['drowsy'];
+            $location = $_POST['location'];
+
+            $sql = "INSERT INTO natural_food(food_item, weight, hunger, energy, injury, poison, frost, burnt, thorns, drowsy, location) 
+                    VALUES ('$food_item', $weight, $hunger, $energy, $injury, $poison, $frost, $burnt, $thorns, $drowsy, '$location')";
+
+            $result = mysqli_query($conn, $sql);
+
+            if ($result) {
+                echo "New record created successfully.";
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+
+            mysqli_close($conn);
+            }
+        ?>
     </head>
     <body>
         <br>
@@ -119,6 +150,27 @@
             <h2>Fetch API event</h2>
             <p id="rule0">Rule 0: Never abandon a Friend in Need!</p>
             <button onclick="getText('txt/PEAK.txt')">Click to fetch text</button>
+            <hr>
+
+            <!--PHP & MySQL-->
+            <h2>PHP & MySQL</h2>
+            <form action="php/sqltest.php" method="post">
+                <fieldset>
+                    <legend>Enter a food item:</legend>
+                    Food Item: <input type="text" name="food_item"><br><br>
+                    Weight: <input type="number" name="weight"><br><br>
+                    Hunger: <input type="number" name="hunger"><br><br>
+                    Energy: <input type="number" name="energy"><br><br>
+                    Injury: <input type="number" name="injury"><br><br>
+                    Poison: <input type="number" name="poison"><br><br>
+                    Frost: <input type="number" name="poison"><br><br>
+                    Burnt: <input type="number" name="poison"><br><br>
+                    Thorns: <input type="number" name="poison"><br><br>
+                    Drowsy: <input type="number" name="poison"><br><br>
+                    Location: <input type="text" name="location"><br>
+                    <input type="submit" id="submit" value="Submit">
+                </fieldset>
+            </form>
         </div>
     </body>
 </html>
