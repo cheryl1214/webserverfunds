@@ -63,38 +63,6 @@
                 document.getElementById("rule0").innerHTML = myText;
             }
         </script>
-
-        <?php 
-            include "php/sqltest.php";
-
-            if (isset($_POST['submit'])) {
-
-            $food_item = $_POST['food_item'];
-            $weight = $_POST['weight'];
-            $hunger = $_POST['hunger'];
-            $energy = $_POST['energy'];
-            $injury = $_POST['injury'];
-            $poison = $_POST['poison'];
-            $frost = $_POST['frost'];
-            $burnt = $_POST['burnt'];
-            $thorns = $_POST['thorns'];
-            $drowsy = $_POST['drowsy'];
-            $location = $_POST['location'];
-
-            $sql = "INSERT INTO natural_food(food_item, weight, hunger, energy, injury, poison, frost, burnt, thorns, drowsy, location) 
-                    VALUES ('$food_item', $weight, $hunger, $energy, $injury, $poison, $frost, $burnt, $thorns, $drowsy, '$location')";
-
-            $result = mysqli_query($conn, $sql);
-
-            if ($result) {
-                echo "New record created successfully.";
-            } else {
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-            }
-
-            mysqli_close($conn);
-            }
-        ?>
     </head>
     <body>
         <br>
@@ -154,7 +122,7 @@
 
             <!--PHP & MySQL-->
             <h2>PHP & MySQL</h2>
-            <form action="php/sqltest.php" method="post">
+            <form action="php/sqlprocess.php" method="post">
                 <fieldset>
                     <legend>Enter a food item:</legend>
                     Food Item: <input type="text" name="food_item"><br><br>
