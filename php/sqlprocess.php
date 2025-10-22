@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>SQL Process</title>
-        
     </head>
     <body>
         <?php 
@@ -16,7 +15,7 @@
             if (!$conn) {
                 die("Connection failed: {mysqli_connect_error()}");
             }
-            echo "Connected successfully";
+            echo "Connected successfully<br>";
 
             $food_item = $_POST['food_item'];
             $weight = $_POST['weight'];
@@ -35,11 +34,7 @@
 
             $result = mysqli_query($conn, $sql);
 
-            if ($result) {
-                echo "New record created successfully.";
-            } else {
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-            }
+            echo $result ? "Success!" : "Failure: {mysqli_error($conn)}";
 
             mysqli_close($conn);
         ?>

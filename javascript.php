@@ -139,6 +139,13 @@
                     <input type="submit" id="submit" name="submit" value="Submit">
                 </fieldset>
             </form>
+            <form action="php/sqlresponse.php" method="post">
+                <fieldset>
+                    <legend>Filter Data:</legend>
+                    Filter: <input type="text" name="filter"><br><br>
+                    <input type="submit" id="submit" value="Submit">
+                </fieldset>
+            </form>
         </div>
     </body>
 </html>
