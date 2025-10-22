@@ -131,12 +131,12 @@
                     Energy: <input type="number" name="energy"><br><br>
                     Injury: <input type="number" name="injury"><br><br>
                     Poison: <input type="number" name="poison"><br><br>
-                    Frost: <input type="number" name="poison"><br><br>
-                    Burnt: <input type="number" name="poison"><br><br>
-                    Thorns: <input type="number" name="poison"><br><br>
-                    Drowsy: <input type="number" name="poison"><br><br>
+                    Frost: <input type="number" name="frost"><br><br>
+                    Burnt: <input type="number" name="burnt"><br><br>
+                    Thorns: <input type="number" name="thorns"><br><br>
+                    Drowsy: <input type="number" name="drowsy"><br><br>
                     Location: <input type="text" name="location"><br>
-                    <input type="submit" id="submit" value="Submit">
+                    <input type="submit" id="submit" name="submit" value="Submit">
                 </fieldset>
             </form>
         </div>
