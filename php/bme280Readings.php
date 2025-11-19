@@ -9,16 +9,10 @@ if(isset($_POST['button'])){
 <html>
     <head>
         <title>BME280 Readings</title>
-        <style>
-            h2{ margin: 0px; margin-left: 8px;}
-            body {
-            font-family: "Century Gothic";
-        }
-        </style>
     </head>
     <body>
-        <h2>BME280 Sensor Readings</h2>
-        <div style="font-family: 'Century Gothic'; color: white; border-radius: 10px; padding: 20px;">
+        <h2 style="margin: 0px; margin-left: 8px; font-family: 'Century Gothic';">BME280 Sensor Readings</h2>
+        <div style="font-family: 'Century Gothic'; margin-left: 8px;">
         Sensor: <?php echo htmlspecialchars($deserialized["sensor"]); ?> <br>
         Humidity: <?php echo htmlspecialchars($deserialized["humidity"]); ?> <br>
         Pressure: <?php echo htmlspecialchars($deserialized["pressure"]); ?> <br>
