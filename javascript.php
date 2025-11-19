@@ -148,7 +148,9 @@
             </form>
 
             <!-- LED button -->
-            <button onclick="window.location.href='php/activateLED.php'">Change LED State</button>
+             <form action="php/activateLED.php" method="post">
+                <submit>Change LED State</submit>
+            </form>
         </div>
     </body>
 </html>
