@@ -52,8 +52,8 @@
             //Change LED state
             function ledChanged() {
                 <?php
-                $mode = `gpio mode 0 out`;
-                $toggle = `gpio toggle 0`;
+                $mode = shell_exec("gpio mode 0 out");
+                $toggle = shell_exec("gpio toggle 0");
                 exec($mode);
                 exec($toggle);
                 ?>
