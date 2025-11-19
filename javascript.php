@@ -151,6 +151,11 @@
              <form action="php/activateLED.php" method="post">
                 <button type="submit" name="button">Change LED State</button>
             </form>
+
+            <!-- BME280 Readings button -->
+             <form action="php/bme290Readings.php" method="post">
+                <button type="submit" name="button">Get BME280 Readings</button>
+            </form>
         </div>
     </body>
 </html>
