@@ -11,7 +11,7 @@ if(isset($_POST['button'])){
         <title>BME280 Readings</title>
     </head>
     <body>
-        <h2 style="margin: 0px; margin-left: 8px; font-family: 'Century Gothic';">BME280 Sensor Readings</h2>
+        <h2 style="margin: 8px; font-family: 'Century Gothic';">BME280 Sensor Readings</h2>
         <div style="font-family: 'Century Gothic'; margin-left: 8px;">
         Sensor: <?php echo htmlspecialchars($deserialized["sensor"]); ?> <br>
         Humidity: <?php echo htmlspecialchars($deserialized["humidity"]); ?> <br>
