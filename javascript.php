@@ -149,7 +149,7 @@
 
             <!-- LED button -->
              <form action="php/activateLED.php" method="post">
-                <button type="submit">Change LED State</button>
+                <button type="submit" name="button">Change LED State</button>
             </form>
         </div>
     </body>
