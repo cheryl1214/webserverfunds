@@ -52,7 +52,10 @@
             //Change LED state
             function ledChanged() {
                 <?php
-                $toggle = shell_exec("gpio toggle 0");
+                $mode = `gpio mode 0 out`;
+                $toggle = `gpio toggle 0`;
+                exec($mode);
+                exec($toggle);
                 ?>
             }
             //Onblur event to check if input is empty function
