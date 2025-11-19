@@ -153,7 +153,7 @@
             </form>
 
             <!-- BME280 Readings button -->
-             <form action="php/bme290Readings.php" method="post">
+             <form action="php/bme280Readings.php" method="post">
                 <button type="submit" name="button">Get BME280 Readings</button>
             </form>
         </div>
