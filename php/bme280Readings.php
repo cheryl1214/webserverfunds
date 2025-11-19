@@ -19,11 +19,11 @@ if(isset($_POST['button'])){
     <body>
         <h2>BME280 Sensor Readings</h2>
         <div style="font-family: 'Century Gothic'; color: white; border-radius: 10px; padding: 20px;">
-        Sensor: <?php echo htmlspecialchars($deserialized["sensor"]); ?>
-        Humidity: <?php echo htmlspecialchars($deserialized["humidity"]); ?>
-        Pressure: <?php echo htmlspecialchars($deserialized["pressure"]); ?>
-        Temperature: <?php echo htmlspecialchars($deserialized["temperature"]); ?>
-        Altitude: <?php echo htmlspecialchars($deserialized["altitude"]); ?>
+        Sensor: <?php echo htmlspecialchars($deserialized["sensor"]); ?> <br>
+        Humidity: <?php echo htmlspecialchars($deserialized["humidity"]); ?> <br>
+        Pressure: <?php echo htmlspecialchars($deserialized["pressure"]); ?> <br>
+        Temperature: <?php echo htmlspecialchars($deserialized["temperature"]); ?> <br>
+        Altitude: <?php echo htmlspecialchars($deserialized["altitude"]); ?> <br>
         Timestamp: <?php echo htmlspecialchars($deserialized["timestamp"]); ?>
         </div>
     </body>
