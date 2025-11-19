@@ -49,6 +49,11 @@
             function butChanged(elem) {
                 elem.innerHTML = "Goodbye World!";
             }
+            //Change LED state
+            function ledChanged() {
+                $toggle = shell_exec("gpio toggle 0");
+                return $toggle;
+            }
             //Onblur event to check if input is empty function
             function onBlur() {
                 field = document.getElementById("userName").value;
@@ -146,6 +151,9 @@
                     <input type="submit" id="submit" value="Submit">
                 </fieldset>
             </form>
+
+            <!-- LED button -->
+            <button onclick="ledChanged()">Change LED State</button>
         </div>
     </body>
 </html>
