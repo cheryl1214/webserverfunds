@@ -1,0 +1,21 @@
+h1, h2, p{ margin: 0px; margin-left: 8px;}
+button, #submit { 
+    margin: 20px;
+    border-radius: 5px;
+}
+button:hover, #submit:hover { opacity: 0.6; }
+img, form { margin-left: 20px; margin-top: 20px;}
+img { width: 700px; height: auto; }
+body {
+    font-family: "Century Gothic";
+    background-image: url("img/PEAK_KeyArt_No_Logo.webp");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+.box1 {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
