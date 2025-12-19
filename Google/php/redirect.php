@@ -13,9 +13,11 @@
 
     $search_query = isset($_GET['q']) ? $_GET['q'] : '';
     $ip_address = $_SERVER['REMOTE_ADDR'];
+    
 
     $sql = "INSERT INTO searches (query, ip_address) VALUES ('$search_query', '$ip_address')";
     $result = mysqli_query($conn, $sql);
+
 
     mysqli_close($conn);
 
